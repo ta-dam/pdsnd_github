@@ -199,12 +199,12 @@ def display_raw_input (df):
     pd.options.display.max_columns = None
     display = input('Would you like to display the csv input? Enter \'yes\' or \'no\':\n').lower()
     i = 0
-    y = 5
+    j = 5
     while display != 'no':
-        print(df.iloc[x:y, :8])
+        print(df.iloc[i:j, :8])
         display = input('Do you want see the next 5 lines? Enter \'yes\' or \'no\':\n'.lower())
-        x += 5
-        y += 5
+        i += 5
+        j += 5
         if display != 'yes':
             break
 
