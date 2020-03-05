@@ -2,6 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
+# files containing the bikeshare data
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -16,7 +17,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington).
 
     city = input('What city do you want to explore—Chicago, New York City or Washington? Enter your chosen city:').lower()
 
@@ -86,7 +87,7 @@ def load_data(city, month, day):
 
     # filter by month if applicable
     if month != 'all':
-        # use the index of the months list to get the corresponding int
+        # use index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month)+1
 
@@ -196,10 +197,16 @@ def user_stats(df, city):
     print('-'*40)
 
 def display_raw_input (df):
+    """Displays raw input data of the csv files."""
+
+    #display all columns at output
     pd.options.display.max_columns = None
+    #input if raw data should be displayed
     display = input('Would you like to display the csv input? Enter \'yes\' or \'no\':\n').lower()
+    #setting x and y to their start values
     x = 0
     y = 5
+    #display 5 rows at a time and ask if next 5 rows should be displyed
     while display != 'no':
         print(df.iloc[x:y, :8])
         display = input('Do you want see the next 5 lines? Enter \'yes\' or \'no\':\n'.lower())
