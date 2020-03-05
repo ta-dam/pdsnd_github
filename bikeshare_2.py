@@ -198,7 +198,7 @@ def user_stats(df, city):
 def display_raw_input (df):
     pd.options.display.max_columns = None
     display = input('Would you like to display the csv input? Enter \'yes\' or \'no\':\n').lower()
-    x = 0
+    i = 0
     y = 5
     while display != 'no':
         print(df.iloc[x:y, :8])
