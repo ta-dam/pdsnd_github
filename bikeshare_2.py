@@ -203,15 +203,18 @@ def display_raw_input (df):
     pd.options.display.max_columns = None
     #input if raw data should be displayed
     display = input('Would you like to display the csv input? Enter \'yes\' or \'no\':\n').lower()
-    #setting x and y to their start values
-    x = 0
-    y = 5
+<<<<<<< HEAD
+    
     #display 5 rows at a time and ask if next 5 rows should be displyed
+=======
+    i = 0
+    j = 5
+>>>>>>> refactoring
     while display != 'no':
-        print(df.iloc[x:y, :8])
+        print(df.iloc[i:j, :8])
         display = input('Do you want see the next 5 lines? Enter \'yes\' or \'no\':\n'.lower())
-        x += 5
-        y += 5
+        i += 5
+        j += 5
         if display != 'yes':
             break
 
